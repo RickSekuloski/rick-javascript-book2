@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Modules</title>
+</head>
+<body>
+    <h1>JavaScript Modules</h1>
+    <h3>Actor: <span id="actorName"></span></h3>
+    <script type ='module'>
+        //import the exported features using the same name in curly brackets
+        import {firstName,lastName} from './modules/module1.js';
+        //default imports can be with different names
+        import P from './modules/module1.js';
+        //import Person from './modules/module1.js';
+        //importing using alias
+        import {list1 as l1,list2 as l2 ,list3 as l3} from './modules/module1.js';
+        //importing using alias
+        import {currentUser as c} from './modules/module1.js';
+        //all imports in one object
+        import * as module1Obj from './modules/module1.js';
+        const tom = new P(firstName);
+        console.log(firstName);
+        console.log(lastName);
+        console.log(tom);
+        console.log(l1);
+        console.log(l2);
+        console.log(l3);
+        const user = c(firstName);
+        console.log(user);
+        console.log('We can get last name like this: ' + module1Obj.lastName);
 
+        //Importing from module2.js
+        import {default as greetings, cube, Person} from './modules/module2.js';
+        console.log(cube(3));
+        console.log(new Person('Rick'));
+        console.log(greetings('Rick'));
+
+        //re-export
+        import * as Main from './modules/main.js';
+        const n = 12;
+        const m = 4;
+        const name =  Main.name('Andy');
+        console.log (`Hi ${name} these are the calculations:`);
+        console.log(' + => ' + Main.Calculate.calcAddition(n,m));
+        console.log(' - => ' + Main.Calculate.calcSubstraction(n,m))
+        console.log(' * => ' + Main.Calculate.calcMultiplication(n,m));
+        console.log(' / => ' + Main.Calculate.calcDivision(n,m));
+
+        // //dynamic imports
+        // let module5 = import('./modules/module5.js');
+        // //console.log(module5);
+        // module5
+        // .then(data => console.log('First'+ data.first()))
+        // .catch(err => console.log(err));
+
+        //async 
+        console.log(`*******************
+        Async import`);
+        async function load() {
+            let module5Data = await import('./modules/module5.js');
+            module5Data.first();
+            module5Data.second();
+            module5Data.third();
+            module5Data.fourth();
+            //calling the export default
+            module5Data.default();
+        }
+        load();
+    </script>
+</body>
+</html>
