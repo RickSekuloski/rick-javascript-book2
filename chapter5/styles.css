@@ -1,0 +1,11 @@
+#paraID {
+    background-color: darkblue;
+    color: white;
+    padding: 40px;
+    text-align: center;
+  }
+  .paraClass {
+    background-color: tomato;
+    color: white;
+    padding: 10px;
+  }

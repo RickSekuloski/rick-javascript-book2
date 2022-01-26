@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Traversing the DOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body>
+  <h1 class='headingDom'>Traversing the DOM</h1>
+  <p class="p1">You can traverse in <strong>three</strong> directions.</p>
+  <h2 class='headingNode'>Types of Nodes</h2>
+  <ul class='uList'>
+    <li>Root Nodes</li>
+    <li>Parent Nodes</li>
+    <li>Children Nodes</li>
+  </ul>
+</body>
+<script>
+    //childNodes for ul list
+    let getUl = document.querySelector('ul');
+
+    // let getChildrenNodes = getUl.childNodes;
+    // console.log(getChildrenNodes);
+    // getUl.firstChild.style.backgroundColor = 'green';//this will not work
+
+    //children property on ul will give us the 3 list elements
+    //let getUlChidlren = getUl.children;
+    //console.log(getUlChidlren);
+    //getUl.firstElementChild.style.backgroundColor = 'green';
+
+    //for loop to set new CSS styles on all of the childrens of ul list
+    // let childrens = getUl.children;
+    // for(chidlren of childrens){
+    //    // console.log(chidlren);
+    //    chidlren.style.backgroundColor = 'teal';
+    //    chidlren.style.padding = '20px';
+    //    chidlren.style.fontSize = '20px';
+    //    chidlren.style.color = 'white';
+    //    chidlren.style.margin = '5px';
+    // }
+    //index number, lenght on children
+    //get the P element and the text and strong element
+
+    //PREVIOUS AND NEXT SIBLING NODE
+    // let allNodes = document.body.childNodes;
+    // console.log(allNodes);
+    //PREVIOUS SIBLING NODE
+    // let headingEl = document.querySelector('h2');
+    // console.log(headingEl);
+    // //if we want to get the previous node:
+    // //const previousSiblingH2 = headingEl.previousSibling;
+    // //if we want to get node that is 2 poisitions before
+    // const previousSiblingH2 = headingEl.previousSibling.previousSibling;
+    // console.log(previousSiblingH2);
+    //NEXT SIBLING NODE
+    // const nextSiblingH2 = headingEl.nextSibling;
+    // console.log(nextSiblingH2);
+
+    //PREVIOUS AND NEXT ELEMENT NODE
+    // let middleListEl = document.querySelector('ul').children[1];
+    // let middleListElRed = middleListEl.style.backgroundColor = 'red';
+    // let previousListEl = middleListEl.previousElementSibling;
+    // let previousListElYellow = previousListEl.style.backgroundColor = 'yellow';
+    // let nextListEl = middleListEl.nextElementSibling;
+    // let nextListElGreen = nextListEl.style.backgroundColor = 'green';
+
+</script>
+</html>

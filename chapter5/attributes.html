@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Attributes</title>
+    <style>
+        img{
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This are images from unsplash.com</h1>
+    <h2>These are not mine big thanks to:</h2>
+    <ul>
+        <li><h3>1) DESIGNECOLOGIST</h3></li>
+        <li><h3>2) Clement Helardot</h3></li>
+    </ul>
+    <img src="./img/clement-helardot-95YRwf6CNw8-unsplash.jpg">
+    <script>
+        const theImg = document.querySelector('img');
+        const imgSource = theImg.hasAttribute('src');
+        console.log('1) hasAttribute method: ' + imgSource);
+        const imgAttribute = theImg.getAttribute('src');
+        console.log('2) getAttribute method: ' + imgAttribute);
+        const imgRemove = theImg.removeAttribute('src');
+        console.log('3) removeAttribute method: ' + theImg);
+        //set the src back
+        theImg.setAttribute('src', './img/designecologist-Pmh0UoG1vlE-unsplash.jpg');
+        //set new alt attribute
+        theImg.setAttribute('alt','Designecologist');
+
+    </script>
+</body>
+</html>

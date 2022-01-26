@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 25px;
+        color: #fff;
+        font-weight: bolder;
+    }
+    .active {
+        background-color: rgb(114, 250, 130);
+    }
+
+    .selected {
+        background-color: rgb(189, 55, 25);
+    }
+    .styled{
+        background-color: rgb(106, 11, 95);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    div {
+        border: 2px solid blue;
+        padding: 15px;
+        margin: 5px;
+    }
+    div:hover{
+        background-color: sandybrown;
+        cursor: pointer;
+    }
+    .heading1{
+        color:#000;
+    }
+</style>
+
+<body>
+    <h1 class="heading1">Class attributes</h1>
+    <div class="styled">Div 1</div>
+    <div class="active">Div 2</div>
+    <div class="selected">Div 3</div>
+    <script>
+        //this will select the first div tag
+       // let div1 = document.querySelector('div');
+        //print the class name
+        //console.log(div1.className);
+        //add new class name to div1
+        //div1.className = 'selected';
+        //select the last div3
+        //let div3 = document.querySelector('.selected');
+        //add class hidden - it will hide the current div -
+        //div3.classList.add('hidden');
+        //remove the hidden classs
+       // div3.classList.remove('hidden');
+        //toggle the hidden class
+        //div3.classList.toggle('hidden');
+        //replace the selected class with styled
+        //div3.classList.replace('selected','styled');
+
+        //STYLE THE DIV2
+let div2 = document.querySelector('.active');
+div2.style.margin = '0 auto';
+div2.style.width = '200px';
+div2.style.height = '200px';
+div2.style.borderRadius = '50%';
+div2.style.fontSize = '40px';
+div2.style.color = 'black';
+div2.style.backgroundColor = 'teal';
+
+//make our new div item to be flex
+div2.style.display = 'flex';
+div2.style.justifyContent = 'center';
+div2.style.alignItems = 'center';
+// Apply style to div using the setAttribute
+div2.setAttribute('style', 'font-size: 10px');//this will delete all of the previous inline
+//styles
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DOM - access to its elements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <h1>Methods we use to access the DOM elements</h1>
+
+  <h2>ID</h2>
+  <div id="divID" class="redBg">Access me by id using the getElementById()</div>
+
+  <h2>Class</h2>
+  <div class="firstClass paleBg">Access me by class name firstClass (1)</div>
+  <div class="firstClass paleBg">Access me by class name firstClass (2)</div>
+
+  <h2>Tag</h2>
+  <p class="spanClass tealBg"><span >Access me by the tag name-span (1)</span></p>
+  <p class="spanClass tealBg"><span>Access me by the tag name-span (1)</span></p>
+
+  <h2>Query Selector</h2>
+  <div id="singleID" class="slateBg">Access me by single query selector</div>
+
+  <h2>Query Selector All</h2>
+  <div class="queryAll salmonBg">Access me by query all class name (1)</div>
+  <div class="queryAll salmonBg">Access me by query all class name (2)</div>
+
+  <script>
+    //Select Element by its ID
+    // let first = document.getElementById('divID');
+    // console.log(first);
+    // first.style.backgroundColor ='green';
+    // first.style.border = '3px solid yellow';
+    //Select Elements By Class Name
+    // let second = document.getElementsByClassName('firstClass');
+    //second.style.border = '3px solid yellow';//this will not work
+    // for(item of second){
+    //     //console.log(item);
+    //     item.style.border = '3px solid yellow';
+    //     item.style.color = 'black';
+    // }
+
+    // Select Elements by Tag Name
+    // let third = document.getElementsByTagName('p');
+    // for(item of third){
+    //     //console.log(item);
+    //     item.style.backgroundColor = 'blue';
+    //     item.style.border = '3px solid teal';
+    //     item.style.color = 'white';
+    //     item.style.fontSize = '20px';
+    // }
+    //Single query selector with ID
+    // let fourth = document.querySelector('#singleID');
+    // fourth.style.border = 'none';
+    // fourth.style.color = 'white';
+    // fourth.style.backgroundColor = '#4d0000';
+    //Single query selector with class name
+    // let fifth = document.querySelector('.slateBg');
+    // fifth.style.border = '3px solid black';
+    // fifth.style.color = 'white';
+    // fifth.style.backgroundColor = 'slateblue';
+
+    //QuerySelectorAll to select all of elements that will match the query
+    // let sixth = document.querySelectorAll('.queryAll, .slateBg');
+    // //console.log(sixth);
+    // sixth.forEach(item =>{
+    //     item.style.color = 'white';
+    //     item.style.padding = '10px';
+    //     item.style.backgroundColor = '#D35400';
+    //     item.style.fontSize = '23px';
+    // })
+
+    //Query selector with comma separated parameter list
+    //let seventh = document.querySelector('.queryAll, .slateBg');
+    //console.log(seventh);
+    //Query selector all with comma separated parameter list
+    // let eight = document.querySelectorAll('.queryAll, .slateBgSS');
+    // console.log(eight);
+
+  </script>
+</body>
+
+</html>

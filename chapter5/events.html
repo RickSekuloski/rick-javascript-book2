@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style>
+    html{
+         font-family: 'Lato', sans-serif;
+         color: #333; 
+        }
+        button{
+            background-color: seagreen;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 24px;
+            padding: 10px 20px;
+            width: 150px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(24, 89, 52);
+        }
+        .heading4{
+            background-color: tomato;
+            text-align: center;
+            padding: 5px 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>There are three ways to assign events to elements:</h1>
+    <ul>
+        <li><h3>1) Inline Event Handlers</h3></li>
+        <li><h3>2) Event Handler Properties</h3></li>
+        <li><h3>3) Event Listeners</h3></li>
+    </ul>
+    <h4 class='heading4'>This text will be changed when the button is clicked</h4>
+    <button onclick="changeContent()">Click</button>
+    <script>
+        //This function will modify the text of the h4 tag
+        const changeContent = () => {
+            const h4 = document.querySelector('.heading4');
+            h4.textContent = "Wow we did it! The content is changed";
+        }
+    </script>
+</body>
+</html>

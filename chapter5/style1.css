@@ -1,0 +1,18 @@
+
+
+.headingDom{
+    padding: 30px 60px;
+    background-color: tomato;
+    text-align: center;
+    color: whitesmoke;
+}
+.p1{
+    font-size: 24px;
+}
+.headingNode{
+    text-transform: uppercase;
+}
+.uList{
+    font-size: 22px;
+    width: 400px;
+}

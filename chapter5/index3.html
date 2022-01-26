@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Traversing the DOM1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+  <h1 class='headingDom'>Ways to Traverse the DOM</h1>
+  <p class="p1">You can traverse in <strong>three</strong> directions.</p>
+  <h2 class='headingNode'>Types of Nodes</h2>
+  <ul class='menu'>
+    <li>Downwards</li>
+    <li>Sideways</li>
+    <li>Upwards</li>
+  </ul>
+  <div class = 'gallery'>
+      <h2 class="gallery__title">Title 1</h2>
+      <h2 class="gallery__description">Description goes here!</h2>
+  </div>
+  <ul class="menu1">
+    <li class='link'><a href="index.html">Home</a></li>
+    <li class='link'><a href="about.html">About Us</a></li>
+    <li class='link'><a href="contact.html">Contact Us</a></li>
+    <li class='link'><a href="jobs.html">Work for Us</a></li>
+    <li class='link'><a href="portfolio.html">Our Projects</a></li>
+  </ul>
+</body>
+<script>
+//find the first heading from our div container
+// const galleryContainer = document.querySelector('.gallery');
+// const galleryContainerTitle = galleryContainer.querySelector('.gallery__title')
+// console.log(galleryContainerTitle);
+
+//get the children of the menu list
+const menuList = document.querySelector('.menu');
+const menuItems = menuList.children;
+console.log(menuItems);
+//Loop over all of the elements
+const items = Array.from(menuItems);
+items.forEach(element => {
+    //console.log(element);
+});
+//nth-child from HTML Collections
+const firstHTMLCollectionItem = menuItems[0];
+const secondHTMLCollectionItem = menuItems[1];
+const thirdHTMLCollectionItem = menuItems[2];
+console.log('HTML Collection nth-items')
+console.log(firstHTMLCollectionItem);
+console.log(secondHTMLCollectionItem);
+console.log(thirdHTMLCollectionItem);
+//nth-child from NodeList
+const links = document.querySelectorAll('.link');
+console.log(links)
+const firstNodeListItem = links[0];
+const secondNodeListItem = links[1];
+const thirdNodeListItem = links[2];
+const fourthNodeListItem = links[3];
+const fifthNodeListItem = links[4];
+console.log('NodeList nth-items')
+console.log(firstNodeListItem);
+console.log(secondNodeListItem);
+console.log(thirdNodeListItem);
+console.log(fourthNodeListItem);
+console.log(fifthNodeListItem);
+
+
+//parent element
+const galleryTitle = document.querySelector('.gallery__description')
+const parentEl = galleryTitle.parentElement
+console.log(parentEl);
+//closest
+const aHref = document.querySelector('a');
+const theClosest = aHref.closest('.menu1');
+console.log(theClosest);
+//combining the parentElement, children and index for sideway DOM traversing
+const firstURLLink = document.querySelector('.link');
+const parent = firstURLLink.parentElement;
+const allLinks = parent.children;
+const thirdLink = allLinks[3];
+console.log(thirdLink);
+
+//short version of getting the third list element
+const theThirdLink = firstURLLink.parentElement.children[3];
+console.log(theThirdLink);
+</script>
+</html>

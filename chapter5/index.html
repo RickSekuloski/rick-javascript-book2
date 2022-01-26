@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Terminology</title>
+</head>
+<body>
+  <h1>DOM Tree and Nodes</h1> 
+  <a id='menu' href='index.html'>Home</a>
+  <p>This is a text</p>
+  <!-- This is an html comment -->
+  <script>
+    let allNodes = document.body.childNodes;
+    console.log(allNodes);
+    let pNode = allNodes[5];
+    let pNodeType = pNode.nodeType;
+    let pNodeName = pNode.nodeName;
+    let commentNode = allNodes[7];
+    console.log(`The paragraph node type value is: `+ pNodeType);
+    console.log(`The paragraph node name is: `+ pNodeName);
+    console.log(`The comment value-content is: `+ commentNode.nodeValue);
+</script>
+</body>
 
+</html>

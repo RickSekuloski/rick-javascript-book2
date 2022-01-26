@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Traversing the DOM4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+        <ul >
+            <li>Call Mom</li>
+            <li>Finish Assignment </li>
+            <li>Visit my Grandparents</li>
+            <li>Write New Article</li>
+            <li>Read a book</li>
+            <li>Check Comments</li>
+        </ul>
+</body>
+<script>
+const heading1 = document.createElement('h1');
+heading1.textContent = 'Create New Elements and Add New Text Content';
+const heading2 = document.createElement('h2');
+heading2.innerHTML = 'New Heading 2 <i> Element </i>';
+const text = document.createTextNode("I'm a text node.");
+document.body.appendChild(heading1);
+document.body.insertBefore(heading2,heading1);
+
+//get the unordered list
+const ul = document.querySelector('ul');
+//get all the li tags
+const listElements = document.querySelectorAll('li');
+//we need the 'Read a book' list element the index is 4
+const fifthElement = listElements[4];
+//create new element
+const newFifthElement = document.createElement('li');
+//add new content to the new element
+newFifthElement.textContent = 'Read a Sci-Fi Book';
+//replace the fifth child with the new one and append it to the ul tag
+ul.replaceChild(newFifthElement,fifthElement);
+</script>
+</html>

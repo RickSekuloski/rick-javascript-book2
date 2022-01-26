@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Traversing the DOM1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+    <div id="myDIV" class="header">
+        <h2>TO-DO LIST</h2>
+            <input type="text" id="myInput" placeholder="Add New Item...">
+            <button class="addBtn">Add</span>
+    </div>
+        
+        <ul id="myUL">
+            <li>Call Mom</li>
+            <li class="checked">Finish Assignment </li>
+            <li>Visit my Grandparents</li>
+            <li>Write New Article</li>
+            <li>Read a book</li>
+            <li>Check Comments</li>
+        </ul>
+    </div>
+</body>
+<script>
+
+//Get the add btn
+let addBtn = document.querySelector('.addBtn');
+
+// Create a "x" button and append it to each list item
+let listElements = document.querySelectorAll("li");
+//listElements is NodeList
+for (element of listElements) {
+  let spanTag = document.createElement("span");
+  let txt = document.createTextNode("x");
+  spanTag.className = "close";
+  spanTag.appendChild(txt);
+  element.appendChild(spanTag);
+}
+
+// Click on a close button to hide the current list item
+let closeBtns = document.querySelectorAll(".close");
+for (element of closeBtns) {
+  element.addEventListener('click', (e)=>{
+     let div = e.target.parentElement;
+     div.style.display = "none";
+  }) 
+}
+
+
+// Add a "checked" symbol when clicking on a list item
+let ulList = document.querySelector('ul');
+ulList.addEventListener('click', (e)=> {
+    console.log(e.target.tagName);
+  if (e.target.tagName === 'LI') {
+    e.target.classList.toggle('checked');
+  }
+});
+
+
+addBtn.addEventListener('click', (e)=>{
+//Get Input
+let inputValue = document.getElementById("myInput").value;
+    if (inputValue !='') {
+        let newLi = document.createElement("li");
+        let newTextNode = document.createTextNode(inputValue);
+        newLi.appendChild(newTextNode);
+        console.log(newLi);
+        //add the close btn to the new list element
+        let spanTag = document.createElement("span");
+        let txt = document.createTextNode("x");
+        spanTag.className = "close";
+        spanTag.appendChild(txt);
+        newLi.appendChild(spanTag);
+        ulList.appendChild(newLi);
+        document.getElementById("myInput").value = "";
+
+        //add the delete functionality
+        let closeBtns = document.querySelectorAll(".close");
+        for (element of closeBtns) {
+        element.addEventListener('click', (e)=>{
+        let div = e.target.parentElement;
+         div.remove(element);
+        }) 
+        }
+    } else {
+        alert('You must type a to-do item!');
+    }
+});
+</script>
+</html>
