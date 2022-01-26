@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence control in JavaScript 1</title>
+</head>
+<body>
+    <h1>Sequence control in JavaScript 1</h1>
+    <h2 id="output">Output goes here:</h2>
+
+    <form name="myForm" action="#">
+
+       <label name="firstOperand">First Operand</label>
+        <input type="text" name="firstOperand" id="first"><br><br>
+
+        <label name="secondOperand">Second Operand</label>
+        <input type="text" name="secondOperand" id="second"><br><br>
+
+        <button id='calculate'>Calculate</button>
+
+    </form>
+    <script>
+        let calcBtn = document.querySelector('#calculate');
+        calcBtn.addEventListener('click',(e)=>{
+            e.preventDefault();//to prevent the form to submit
+            let a = parseInt(document.querySelector('#first').value);
+            let b = parseInt(document.querySelector('#second').value);
+            
+            function printThis(theSum) {
+                 document.getElementById("output").innerHTML = theSum;
+            }
+
+            function calculateTwo(a, b) {
+                let sum = a + b;
+                printThis(sum);
+            }
+
+            calculateTwo(a, b);
+       
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using the Promise-based Fetch API</title>
+</head>
+<body>
+    <h1>Fetching data from SWAPI</h1>
+    <h2>The Star Wars API</h2>
+    <p>
+        All the data is accessible through our HTTP web API.<br>
+        Consult our documentation if you'd like to get started.
+        Helper libraries for popular programming languages are also <br>
+        provided so you can consume swapi in your favourite programming language,<br>
+        in a style that suits you.<br>
+        Read more Here : <a href="https://swapi.dev/documentation">Swapi Documentation</a>
+    </p>
+    <div id="output">
+        <p>Name: <span class="name">Name</span></p>
+        <p>DOB: <span class="dob">Brith</span></p>
+        <p>His movies:</p>
+        <ul id="movieList">
+        </ul>
+    </div>
+<script>
+const output = document.querySelector('#output');
+const name = document.querySelector('.name');
+const dob = document.querySelector('.dob');
+const ul = document.querySelector('#movieList');
+const URL = 'https://swapi.dev/api/people/4/';
+
+loadCharacter(URL);
+
+async function loadCharacter(url){
+    const fetchPromise = await fetch(url);
+    const data = await fetchPromise.json();
+    name.innerHTML = data.name;
+    dob.innerHTML = data.birth_year;
+    const films = listOfFilms(data.films);
+}
+async function listOfFilms(films){
+    console.log(films);
+    for(const film of films){
+        const fetchMovie = await fetch(film);
+        const movie = await fetchMovie.json();
+        let li = document.createElement('li');
+        li.innerHTML = movie.title;
+        ul.appendChild(li);
+    }
+}
+</script>
+</body>
+</html>

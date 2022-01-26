@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Function in JavaScript</title>
+</head>
+<body>
+    <h1>setTimeout function in JavaScript</h1>
+    <h2 id="output">Output goes here:</h2>
+
+    <form name="myForm" action="#">
+
+       <label name="firstOperand">First Operand</label>
+        <input type="text" name="firstOperand" id="first"><br><br>
+
+        <label name="secondOperand">Second Operand</label>
+        <input type="text" name="secondOperand" id="second"><br><br>
+
+        <button id='calculate'>Calculate</button>
+
+    </form>
+<script>
+function displayResult1() {
+    document.getElementById("output").innerHTML = 'Loading.....';
+}
+function displayResult2() {
+    document.getElementById("output").innerHTML = 'You will see this message in 10 seconds';
+}
+setTimeout(displayResult2, 10000);
+setTimeout(displayResult1, 5000);
+</script>
+</body>
+</html>

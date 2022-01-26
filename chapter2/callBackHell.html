@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Hell</title>
+    <style>
+        .output {
+          height: 250px;
+          width: 250px;
+          border: 3px solid black;
+          text-align: center;
+        }
+        .redOutput{
+            background-color: red;
+        }
+        .blueOutput{
+            background-color: blue;
+        }
+        .greenOutput{
+            background-color: green;
+        }
+        .yellowOutput{
+            background-color: yellow;
+        }
+        .change{
+            background-color: blueviolet;
+            border-radius: 10%;
+            color: white;
+            border:none;
+            font-size: 26px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            }
+        </style>
+        
+</head>
+<body>
+    <h1>CallBack Hell</h1>
+    <h2 id="output" class="output">Output goes here:</h2>
+    <button class='change' id="change">Transform Me!</button>
+<script>
+const transformBtn = document.querySelector('.change');
+const el = document.querySelector('.output');
+const changeMe = (e) =>{
+    setTimeout(function() {
+    el.classList.add('redOutput');
+        setTimeout(function(){
+            el.classList.remove("redOutput");
+            el.classList.add('greenOutput');
+            setTimeout(function(){
+                el.classList.remove("greenOutput");
+                el.classList.add('blueOutput');
+                    setTimeout(function(){
+                        el.classList.remove("blueOutput");
+                        el.classList.add('yellowOutput')
+                    },800)
+            },1500);
+        },3000)
+  }, 5000);
+}
+transformBtn.addEventListener('click', changeMe);
+</script>
+</body>
+</html>
+
