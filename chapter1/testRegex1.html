@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions 1</title>
+</head>
+
+<body>
+    <h1>Regular Expressions 1 Modifiers</h1>
+
+    <p class='result' 
+    style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+    The output goes here!</p>
+    <button id='clickBtn' style="color:black;font-size:19px;">Click Me</button>
+    <script>
+        const btn = document.querySelector('#clickBtn');
+        const pTag = document.querySelector('.result');
+        //const myString = `Mam, Mom, Mum, Magm`;
+        //const regPattern = /M/g;//global
+        //const regPattern = /M.m/g;//global
+
+        //dot (.)
+        const myString = `5.00, 510, 570`;
+        //const regPattern = /5.0/g;
+        const regPattern = /5\.0/g;
+        btn.addEventListener('click',(e)=>{
+            const result = myString.match(regPattern);
+            pTag.innerHTML = result;
+        });
+    </script>
+</body>
+</html>

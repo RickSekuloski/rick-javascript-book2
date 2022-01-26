@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+</head>
+
+<body>
+    <h1>Regular Expressions</h1>
+
+    <p class='result' 
+    style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+    The output goes here!</p>
+    <button id='clickBtn' style="color:black;font-size:19px;">Click Me</button>
+    <script>
+        const btn = document.querySelector('#clickBtn');
+        const pTag = document.querySelector('.result');
+        const myString = `Regular expressions are patterns used to match character
+        combinations in strings. In JavaScript, regular expressions are also objects`;
+        //const regPattern = /ions/;//standard
+        //const regPattern = /ions/g;//global
+        const regPattern = /Ions/i;//insensitive
+
+        btn.addEventListener('click',(e)=>{
+            const result = myString.match(regPattern);
+            pTag.innerHTML = result;
+        });
+    </script>
+</body>
+</html>
